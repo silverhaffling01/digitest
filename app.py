@@ -3,7 +3,7 @@ import jwt
 import os
 
 app = Flask(__name__)
-SECRET_KEY = "supersecret"  # Weak key
+SECRET_KEY = "robot"  # Weak key
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -20,7 +20,7 @@ def admin():
     try:
         decoded = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
         if decoded["role"] == "admin":
-            return "Code : NoCable321"
+            return "Flag : NoCable321"
         else:
             return "Access denied."
     except jwt.InvalidTokenError:
