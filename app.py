@@ -20,7 +20,7 @@ def admin():
     try:
         decoded = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
         if decoded["role"] == "admin":
-            return "Welcome, admin!"
+            return "Code : NoCable321"
         else:
             return "Access denied."
     except jwt.InvalidTokenError:
